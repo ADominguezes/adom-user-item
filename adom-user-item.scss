@@ -1,0 +1,56 @@
+:host([hidden]) {
+  display: none;
+}
+
+:host {
+  display: block;
+  box-sizing: border-box;
+  color: var(--adom-user-item-color, #363737);
+  .user {
+    padding: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    height: var(--adom-user-item-user-height, 60px);
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--adom-user-item-user-bg-color, transparent);
+    border: 0;
+    cursor: pointer;
+    &__icon-user {
+      height: 50px;
+      line-height: 50px;
+      margin: 0 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--adom-user-item-arrow-button-color, #363737);
+    }
+    &__image-user {
+      width: var(--adom-user-item-image-user-width, 50px);
+      height: var(--adom-user-item-image-user-height, 50px);
+    }
+    &__name-user,
+    &__name-email {
+      margin: 0 1em;
+      padding: 0 0.5em;
+      height: 50px;
+      line-height: 50px;
+      font-size: 1.2em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &__name-user {
+      font-weight: bolder;
+    }
+    &__name-email {
+      color: var(--adom-user-item-name-email-color, #ef6c00);
+    }
+    &:hover {
+      background: var(--adom-user-item-user-hover-bg-color, #ededed);
+    }
+    &:focus {
+      background: var(--adom-user-item-user-focus-bg-color, #d8d8d8);
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>adom-user-item demo</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script>
+    window.Polymer = {
+      dom: 'shadow',
+      lazyRegister: 'true',
+      useNativeCSSProperties: 'true'
+    }
+  </script>
+
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../bower_components/adom-demo/adom-demo.html">
+  <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+  <link rel="import" href="../adom-user-item.html">
+
+  <style is="custom-style" include="demo-pages-shared-styles">
+    /*Common styles*/
+
+    .component-info {
+      padding: 1em;
+    }
+
+    .adom-user-item {
+      color: #3e3e3e;
+    }
+
+    .component-description {
+      color: #999;
+    }
+
+    demo-snippet {
+      --demo-snippet-demo: {
+        display: block;
+      };
+    }
+  </style>
+</head>
+
+<body>
+  <paper-toast id="toast" text="adom-user-item-click-user"></paper-toast>
+  <adom-demo id="demo" option-selected="0">
+    <div>
+      <div class="component-info">
+        <h2 class="adom-user-item">Basic adom-user-item demo</h2>
+        <div class="component-description">
+          <p>Components description demo</p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-user-item id="component0" name="John" last-name="Doe" email="email@email.com" user-role="Administrator" url-image="http://lorempixel.com/480/650/people/7/"></adom-user-item>
+          <script>
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+    <div>
+      <div class="component-info">
+        <h2 class="adom-user-item">With role icon</h2>
+        <div class="component-description">
+          <p>Components description demo</p>
+        </div>
+      </div>
+      <demo-snippet>
+        <template>
+          <adom-user-item id="component0" name="John" last-name="Doe" email="email@email.com" user-role="Administrator" url-image="http://lorempixel.com/480/650/people/7/" show-icon-left icon-left="icons:chrome-reader-mode"></adom-user-item>
+          <script>
+          </script>
+        </template>
+      </demo-snippet>
+    </div>
+  </adom-demo>
+  <script>
+    var menu = [
+      { optionName: 'Basic' },
+      { optionName: 'with role icon' }
+    ];
+    var demo = document.getElementById('demo');
+    demo.optionsMenu = menu;
+    document.addEventListener('adom-user-item-click-user', function() {
+      document.querySelector('#toast').open();
+    })
+  </script>
+</body>
+
+</html>
